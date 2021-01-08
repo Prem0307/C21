@@ -1,0 +1,31 @@
+var fixedRect, movingRect,wall;
+
+function setup() {
+  createCanvas(1200,800);
+  fixedRect = createSprite(400, 100, 50, 80);
+  fixedRect.shapeColor = "green";
+  fixedRect.debug = true;
+  movingRect = createSprite(400, 200,80,30);
+  movingRect.shapeColor = "green";
+  movingRect.debug = true;
+  wall = createSprite(400,800,80,30);
+  wall.shapeColor = "green";
+  wall.debug = true;
+  movingRect.velocityY = +6;
+  fixedRect.velocityY = +5;
+  wall.velocityY = -5;
+}
+
+function draw() {
+  background(0,0,0);  
+
+  
+  drawSprites();
+  bounceOff(movingRect,wall);
+}
+
+
+
+
+
+
